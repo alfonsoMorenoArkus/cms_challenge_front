@@ -1,0 +1,13 @@
+.tableStyle {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableHead {
+  height: 40px;
+}
+
+.tableHeadTr{
+    background-color: rgb(49, 45, 45);
+    color: white;
+}

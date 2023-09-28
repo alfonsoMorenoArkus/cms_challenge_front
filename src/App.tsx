@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { Container } from "@mui/material";
+import { ManageContent } from "./cms/components/ManageContent";
+import { ManageCategories } from "./cms/components/ManageCategories";
+import * as RoutesCMS from "./cms/routes";
+import { Styles } from "./App.styled";
+import { storeCmsChallenge } from "./cms/store";
+import { SideBarCms } from "./cms/baseComponents/SideBarCms";
+import "./App.css";
+import { AppBarCms } from "./cms/baseComponents/AppBarCms";
+import { ManageCreateUpdateContent } from "./cms/components/ManageContent";
 
-function App() {
+const App = () => {
+  const [collapsedSideBar, setCollapsedSideBar] = useState<boolean>(false);
+
+  const sideBarCollapsed = (param: boolean) => {
+    setCollapsedSideBar(param);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <AppBarCms onClickMenuAppBar={sideBarCollapsed} />
+      <Container disableGutters={true} maxWidth={false} sx={Styles.container}>
+        <Provider store={storeCmsChallenge}>
+          <SideBarCms flagCollapsedSideBar={collapsedSideBar} />
+          <Routes>
+            <Route path={RoutesCMS.CMS_CONTENT} element={<ManageContent />} />
+            <Route
+              path={RoutesCMS.CMS_CATEGORIES}
+              element={<ManageCategories />}
+            />
+            <Route
+              path={RoutesCMS.CMS_NEW_EDIT_CONTENT}
+              element={<ManageCreateUpdateContent />}
+            />
+          </Routes>
+        </Provider>
+      </Container>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
