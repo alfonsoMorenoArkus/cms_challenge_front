@@ -118,5 +118,15 @@ export const Styles: StylesObj = {
     width: '100%',
     height: '80%',
     marginTop: '10px',
+  },
+  btnActionsButtonsTable:{
+    color: 'black',
+    border: "1px solid gray",
+  },
+  boxBtnActionsTable:{
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'end',
+    marginTop: '1rem'
   }
 };

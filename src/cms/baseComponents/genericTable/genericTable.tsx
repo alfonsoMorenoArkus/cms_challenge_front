@@ -15,14 +15,15 @@ export const GenericTable = ({
         selectionModelChangeTable(values);
     }
   return (
-    <Box sx={{ height: '100%',width: "100%", flexGrow: 1 }}>
+    <Box sx={{ height: '90%',width: "100%", flexGrow: 1 }}>
       <DataGrid
         rows={dataBody}
         columns={columnsTable}
+        style={{ height: '100%' }}
         initialState={{
           pagination: {
             paginationModel: {
-              pageSize: 5,
+              pageSize: 10,
             },
           },
         }}

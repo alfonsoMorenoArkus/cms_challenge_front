@@ -8,12 +8,14 @@ import {
   Button,
   FormControl,
   MenuItem,
-  Link,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { TableCategories } from "../../baseComponents/TableCategories";
 import { OPTIONS_FILTER_CONTENT_BY } from "../ManageContent";
+import { categoriesBodyList } from "./manageCategories.const";
+import * as ROUTES from "../../routes";
 
 import { Styles } from "./manageCategories.styled";
 export const ManageCategories = () => {
@@ -70,35 +72,53 @@ export const ManageCategories = () => {
             </Button>
           </Box>
           <Box sx={Styles.boxNewCategorie}>
-            <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'start', marginLeft:'1rem'}}>
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "start",
+                marginLeft: "1rem",
+              }}
+            >
               <AddCircleOutlineIcon
                 sx={{ fontSize: "30px", color: "green", marginRight: "10px" }}
               />
               <Link
-                underline="hover"
-                sx={{ cursor: "pointer", color: "black" }}
+                to={ROUTES.CMS_NEW_SUB_CATEGORY}
+                style={{ textDecoration: "none", color: "black" }}
               >
                 New Sub-Category
               </Link>
             </Box>
-            <Box sx={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'start', marginLeft:'1rem', marginTop: '10px'}}>
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "start",
+                marginLeft: "1rem",
+                marginTop: "10px",
+              }}
+            >
               <AddCircleOutlineIcon
                 sx={{ fontSize: "30px", color: "green", marginRight: "10px" }}
               />
               <Link
-                underline="hover"
-                sx={{ cursor: "pointer", color: "black" }}
+                to={ROUTES.CMS_NEW_INTERIOR_SUB_CATEGORY}
+                style={{ textDecoration: "none", color: "black" }}
               >
-                New Interir Sub-Category
+                New Interior Sub-Category
               </Link>
             </Box>
           </Box>
         </Box>
         <Box sx={Styles.boxTableCategories}>
-        <TableCategories />
+          <TableCategories
+            categoriesInformation={categoriesBodyList.categoriesInformation}
+          />
+        </Box>
       </Box>
-      </Box>
-      
     </Container>
   );
 };

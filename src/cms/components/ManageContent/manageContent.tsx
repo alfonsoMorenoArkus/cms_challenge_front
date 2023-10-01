@@ -22,6 +22,7 @@ import {
   HEADER_TABLE,
   OPTIONS_FILTER_CONTENT,
   OPTIONS_FILTER_CONTENT_BY,
+  BODY_TABLE,
 } from "./manageContent.const";
 
 export const ManageContent = () => {
@@ -46,10 +47,6 @@ export const ManageContent = () => {
   const cmsManage = useSelector(
     (state: RootState) => state.cmsContentManage.contentToShowCMS
   );
-
-  // useEffect(() => {
-  //   console.log(cmsManage);
-  // }, []);
 
   const checkBoxFromTable = (values: any) => {
     setContentManageIdsRows(values);
@@ -240,10 +237,48 @@ export const ManageContent = () => {
             </Box>
           </Box>
         </Box>
+        <Box sx={Styles.boxBtnActionsTable}>
+          <Button
+            disabled={contentManageIdsRows.length === 1 ? false : true}
+            variant="outlined"
+            sx={Styles.btnActionsButtonsTable}
+          >
+            edit
+          </Button>
+          <Button
+            variant="outlined"
+            disabled={contentManageIdsRows.length === 1 ? false : true}
+            sx={{ ...Styles.btnActionsButtonsTable, marginLeft: "15px" }}
+          >
+            update
+          </Button>
+          <Button
+            variant="outlined"
+            sx={{
+              ...Styles.btnActionsButtonsTable,
+              marginLeft: "15px",
+              marginRight: "10px",
+            }}
+            disabled={contentManageIdsRows.length > 0 ? false : true}
+          >
+            unlocked
+          </Button>
+          <Button
+            variant="outlined"
+            sx={{
+              ...Styles.btnActionsButtonsTable,
+              marginLeft: "10px",
+              marginRight: "10px",
+            }}
+            disabled={contentManageIdsRows.length > 0 ? false : true}
+          >
+            Delete
+          </Button>
+        </Box>
         <Box sx={Styles.boxGenericTable}>
           <GenericTable
             columnsTable={HEADER_TABLE}
-            dataBody={[]}
+            dataBody={BODY_TABLE}
             selectionModelChangeTable={checkBoxFromTable}
             selectionsModelIds={contentManageIdsRows}
           />

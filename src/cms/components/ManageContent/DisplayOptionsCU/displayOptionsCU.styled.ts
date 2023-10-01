@@ -92,16 +92,16 @@ export const Styles: StylesObj = {
   },
   boxNewFieldsTemplate: {
     width: "100%",
-    marginTop: '10px'
+    marginTop: "10px",
   },
   selectNewTemplate: {
     width: "40%",
   },
-  boxRadioBtnPostType:{
-    width: '100%',
-    marginTop: '2rem',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center'
-  }
+  boxRadioBtnPostType: {
+    width: "100%",
+    marginTop: "2rem",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
 };

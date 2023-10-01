@@ -41,7 +41,7 @@ export const Styles: StylesObj = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flexDirection: 'column'
+    flexDirection: "column",
   },
   textFieldFilterCategorie: {
     width: "20%",
@@ -82,9 +82,133 @@ export const Styles: StylesObj = {
     marginLeft: "1.5rem",
   },
   // Styles to table categories
-  boxTableCategories:{
-    width: '100%',
+  boxTableCategories: {
+    width: "100%",
     border: "1px solid #c2c0c4",
-
-  }
+  },
+  // Styles for component create/update categories
+  boxFatherNewEditCategorie: {
+    width: "100%",
+    display: "flex",
+  },
+  boxCategorieCUdTitle: {
+    width: "100%",
+    height: "30px",
+    backgroundColor: "gray",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  styledTitleViewCategorieCU: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: 500,
+    width: "97%",
+    textAlign: "center",
+  },
+  boxChildCrudCategories: {
+    margin: 3,
+    width: "95%",
+    border: "1px solid #c2c0c4",
+    backgroundColor: "#e9e7eb",
+  },
+  boxSubCategorieCu: {
+    width: "95%",
+    height: "100%",
+    margin: 3,
+  },
+  boxSelectSubCategorieCu: {
+    width: "100%",
+  },
+  boxSelectThumbnailCategorieIcon: {
+    marginTop: "10px",
+    width: "20%",
+    height: "13%",
+    backgroundColor: "#c2c0c4",
+    borderTopRightRadius: "18px",
+    borderTopLeftRadius: "18px",
+    display: "flex",
+    justifyContent: "end",
+    alignItems: "center",
+  },
+  boxSelectThumbnailCategorieImage: {
+    width: "20%",
+    height: "87%",
+    backgroundColor: "gray",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  boxLandingPageLine: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  boxCodeCatLandingPage: {
+    width: "50%",
+    height: "100%",
+  },
+  boxPreviewCatLandingPage: {
+    width: "50%",
+    height: "100%",
+  },
+  boxIconsLandingPage: {
+    width: "100%",
+    height: "22%",
+    backgroundColor: "rgba(84,84,84,255)",
+    borderTopRightRadius: "19px",
+    borderTopLeftRadius: "19px",
+  },
+  boxTextCodeLandingPage: {
+    width: "100%",
+    height: "78%",
+  },
+  boxIconUpDown: {
+    width: "3%",
+    display: "flex",
+    alignItems: "center",
+    margin: "5px",
+  },
+  iconsUpDownPageDescription: {
+    width: "100%",
+    height: "50%",
+    borderRadius: "30px",
+    marginTop: "3rem",
+    backgroundColor: "#c2c0c4",
+    border: "1px solid gray",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+  },
+  boxTitleLandingPageMenuCollapsed: {
+    width: "100%",
+    height: "30px",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "gray",
+    marginTop: "3rem",
+  },
+  rotateDown: {
+    transform: "rotate(180deg)",
+  },
+  rotateUp: {
+    transform: null,
+  },
+  boxPageLadingSeoOpen: {
+    width: "100%",
+    height: "400px",
+    transition: "all 0.5s",
+    overflow: "auto",
+    marginTop: "10px",
+  },
+  boxPageLadingSeoClose: {
+    width: "100%",
+    height: 0,
+    transition: "all 0.5s",
+    overflow: "hidden",
+  },
 };

@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
+  Button,
   Container,
   IconButton,
   SelectChangeEvent,
@@ -189,7 +190,33 @@ export const ManageCreateUpdateContent = () => {
             addNewPackageTemplate={newPackageTemplate}
             deleteItemFromPackagesTemplate={deleteItemPackageTemplate}
             onChangeTemplates={onChangePackageTemplate}
+            key={'crudManageContent'}
           />
+          <Box sx={StylesCU.boxBtnSubmitManage}>
+            <Button sx={StylesCU.btnButtonsSubmit} variant="contained">
+              Submit
+            </Button>
+            <Button
+              sx={{ ...StylesCU.btnButtonsSubmit, marginLeft: "1rem" }}
+              variant="contained"
+            >
+              Save & view
+            </Button>
+            <Box sx={{ marginTop: "1rem" }}>
+              <Link
+                to={ROUTES.CMS_CONTENT}
+                style={{
+                  color: "crimson",
+                  marginLeft: "1rem",
+                  textAlign: "center",
+                  fontSize: 17,
+                  fontWeight: 600,
+                }}
+              >
+                Cancel
+              </Link>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Container>

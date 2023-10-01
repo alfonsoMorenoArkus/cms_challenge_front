@@ -11,6 +11,7 @@ import { SideBarCms } from "./cms/baseComponents/SideBarCms";
 import "./App.css";
 import { AppBarCms } from "./cms/baseComponents/AppBarCms";
 import { ManageCreateUpdateContent } from "./cms/components/ManageContent";
+import { ManageCreateUpdateCategories } from "./cms/components/ManageCategories";
 
 const App = () => {
   const [collapsedSideBar, setCollapsedSideBar] = useState<boolean>(false);
@@ -34,6 +35,14 @@ const App = () => {
             <Route
               path={RoutesCMS.CMS_NEW_EDIT_CONTENT}
               element={<ManageCreateUpdateContent />}
+            />
+            <Route
+              path={RoutesCMS.CMS_NEW_SUB_CATEGORY}
+              element={<ManageCreateUpdateCategories />}
+            />
+            <Route
+              path={RoutesCMS.CMS_NEW_INTERIOR_SUB_CATEGORY}
+              element={<ManageCreateUpdateCategories />}
             />
           </Routes>
         </Provider>
